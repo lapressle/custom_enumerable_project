@@ -29,6 +29,11 @@ module Enumerable
     end
     select_arr == self
   end
+
+  def my_any?
+    arr = self.my_select {|value| yield(value)}
+    arr.length > 0
+  end
 end
 
 # You will first have to define my_each
