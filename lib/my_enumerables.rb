@@ -48,6 +48,15 @@ module Enumerable
       self.length
     end
   end
+
+  def my_map
+    arr = []
+    self.my_each do |i|
+      arr.push(yield(i))
+    end
+    arr
+  end
+
 end
 
 # You will first have to define my_each
