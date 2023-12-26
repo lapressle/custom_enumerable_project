@@ -9,6 +9,17 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    select_arr = []
+      self.my_each do |i|
+        if yield(i)
+          select_arr.push(i)
+        end
+      end
+    select_arr
+  end
+
 end
 
 # You will first have to define my_each
