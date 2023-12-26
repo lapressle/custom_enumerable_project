@@ -20,6 +20,15 @@ module Enumerable
     select_arr
   end
 
+  def my_all?
+    select_arr = []
+    self.my_each do |i|
+      if yield(i)
+        select_arr.push(i)
+      end
+    end
+    select_arr == self
+  end
 end
 
 # You will first have to define my_each
