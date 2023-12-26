@@ -34,6 +34,20 @@ module Enumerable
     arr = self.my_select {|value| yield(value)}
     arr.length > 0
   end
+
+  def my_none?
+    arr = self.my_select {|value| yield(value)}
+    arr.length == 0
+  end
+
+  def my_count
+    if block_given?
+      arr = self.my_select {|value| yield(value)}
+      arr.length
+    else
+      self.length
+    end
+  end
 end
 
 # You will first have to define my_each
